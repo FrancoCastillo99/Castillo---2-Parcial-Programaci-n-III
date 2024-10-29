@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Restaurante Ecommerce</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
+</head>
+    <body>
+        <nav>
+            <h1>Mi Restaurante</h1>
+            <div class="search-container">
+                <input type="text" id="search" placeholder="Buscar...">
+            </div>
+            <div class="cart-icon" id="cart-icon">
+                🛒 <span class="cart-count" id="cart-count">0</span>
+            </div>
+        </nav>
+
+        <div class="container">
+            <aside class="sidebar" id="sidebar">
+                <h2>Categorías</h2>
+                <ul>
+                    <li><a href="#" data-category="todo">Todo</a></li>
+                    <li><a href="#" data-category="hamburguesa">Hamburguesas</a></li>
+                    <li><a href="#" data-category="papas">Papas</a></li>
+                    <li><a href="#" data-category="bebidas">Bebidas</a></li>
+                </ul>
+                <div class="sort-options">
+                    <h3>Ordenar por precio:</h3>
+                    <div class="sort-buttons">
+                        <button id="sort-asc">Menor a Mayor</button>
+                        <button id="sort-desc">Mayor a Menor</button>
+                    </div>
+                </div>
+                <div class="add-product">
+                    <h3>Agregar Producto</h3>
+                    <form id="add-product-form">
+                        <input type="text" id="product-name" placeholder="Nombre del producto" required>
+                        <input type="number" id="product-price" placeholder="Precio" required>
+                        <select id="product-category" required>
+                            <option value="">Seleccionar categoría</option>
+                            <option value="hamburguesa">Hamburguesa</option>
+                            <option value="papas">Papas</option>
+                            <option value="bebidas">Bebidas</option>
+                        </select>
+                        <input type="url" id="product-image" placeholder="URL de la imagen" required>
+                        <button type="submit">Agregar Producto</button>
+                    </form>
+                </div>
+            </aside>
+
+            <main>
+                <div id="products" class="products-grid"></div>
+                <div id="no-results" class="no-results" style="display: none;">No se encuentra este producto</div>
+            </main>
+        </div>
+
+        <div id="cart-modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Carrito de Compras</h2>
+                <div id="cart-items"></div>
+                <div id="cart-total"></div>
+                <button id="checkout-btn">Realizar Compra</button>
+            </div>
+        </div>
+
+        <div id="edit-modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Editar Producto</h2>
+                <form id="edit-product-form">
+                    <input type="text" id="edit-product-name" required>
+                    <input type="number" id="edit-product-price" step="0.01" required>
+                    <select id="edit-product-category" required>
+                        <option value="hamburguesa">Hamburguesa</option>
+                        <option value="papas">Papas</option>
+                        <option value="bebidas">Bebidas</option>
+                    </select>
+                    <input type="url" id="edit-product-image" required>
+                    <div class="edit-buttons">
+                        <button type="submit" class="edit-save-button">Guardar Cambios</button>
+                        <button type="button" id="delete-product-button" class="delete-button">Eliminar Producto</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <script type="module" src="main.js"></script>
+    </body>
+</html>
