@@ -369,7 +369,6 @@ document.getElementById('delete-product-button').addEventListener('click', () =>
           document.getElementById('edit-modal').style.display = 'none';
           
           // Guarda el nombre antes de establecer a null
-          const deletedProductName = currentEditingProduct.name;
           currentEditingProduct = null;
 
           // Notificación de confirmación de eliminación
